@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="CollegeModule/DashboardTemplate::Layout(~{::section})">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <link type="text/css" href="/StyleSheet/login.css" rel="stylesheet"/>
+  
+  </head>
+  <body>
+  <section>
+  <link type="text/css" href="/StyleSheet/Dashboard.css" rel="stylesheet"/>
+   <title>Recuriter | Check</title>
+   <div class="margin-body">
+<div class="container">
+        <div class="card-lg">
+          <div class="card-body" >
+   			<form th:action="@{'/updateCollegeDetails'+${college.collegeId}}" method="get">
+   			<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+             <button  type="submit" class="btn btn-outline-success me-md-2  " >Save</button>
+             </div>
+                <div class="form-row">
+                    <div class="form-group col-md-8">
+                <label for="exampleFormControlInput1">College Name</label>
+                <input name="collegeName" type="text" class="form-control" id="exampleFormControlInput1"th:value="${college.collegeName}">
+              </div>
+              <div class="form-group col-md-4">
+                <label for="exampleFormControlInput1">Code</label>
+                <input name="collegeCode" type="number" class="form-control" id="exampleFormControlInput1" th:value="${college.collegeCode}">
+              </div>
+            </div>
+      
+              
+              <div class="form-group">
+                <label for="exampleFormControlInput1">College Email</label>
+                <input name="collegeEmail" type="email" class="form-control" id="exampleFormControlInput1" th:value="${college.collegeEmail}">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">College PhoneNo</label>
+                <input name="collegePhoneNo" type="text" class="form-control" id="exampleFormControlInput1" th:value="${college.collegePhoneNo}">
+              </div>
+              
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Admin Name</label>
+                <input name="adminName" type="text" class="form-control" id="exampleFormControlInput1" th:value="${college.adminName}">
+              </div>
+             
+              <div class="form-group">
+                <label for="inputAddress">College Address</label>
+                <input name="collegeAddress" type="text" class="form-control" id="inputAddress" th:value="${college.collegeAddress}">
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="inputCity">City</label>
+                  <input name="collegeCity" type="text" class="form-control" id="inputCity"th:value="${college.collegeCity}">
+                </div>
+              <div class="form-group col-md-4">
+                <label for="exampleFormControlSelect1">Country</label>
+                <select name="collegeCountry" class="form-control" >
+                  <option  th:value="${college.collegeCountry}"><p th:text="${college.collegeCountry}"></p></option>
+                  <option value="India">India</option>
+                  <option value="USA">USA</option>
+                  <option value="Japan">Japan</option>
+                  <option value="UAE">UAE</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-5">
+                <label for="exampleFormControlSelect1">State</label>
+                <select name="collegeState" class="form-control"  >
+                 <option  th:value="${college.collegeState}"><p th:text="${college.collegeState}"></p></option>
+                  <option value="TamilNadu">TamilNadu</option>
+                  <option value="Kerala">Kerala</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="Andharpradesh">AndhraPradesh</option>
+                </select>
+              </div>
+              </div>
+
+             
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" class="form-control" id="exampleFormControlInput1"th:value="${college.collegePassword}">
+            </div>
+            <div class="form-group">
+              <label>Confirm Your Password</label>
+              <input name="collegePassword" type="password" class="form-control" id="exampleFormControlInput1" th:value="${college.collegePassword}">
+            </div>
+
+            
+           
+            </form>
+            </div>
+        </div>
+          </div>
+  </div>
+  
+  </section> 
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <title>College | SignUp</title>
+    <link type="text/css" href="/StyleSheet/login.css" rel="stylesheet"/>
+    
+    <script src="optionblock.js"></script>
+    
+ 
+  </head>
+  <body>
+   
+  <div  class="background-1">
+
+    <div class="container py-5 ">
+        <div class="row ">
+          <div class="col" >
+          <div class="container-sm ">
+          <h1 >Complete your details</h1>
+           <p>Already have an account? <a href="/c_login">Log In</a></p>
+          </div>
+          </div>
+
+
+          <div class="col ">
+        <div class="card">
+          <div class="card-body" >
+            <form action="/saveCollegeDetails" method="post">
+                <div class="form-row">
+                    <div class="form-group col-md-8">
+                <label for="exampleFormControlInput1">College Name</label>
+                <input name="collegeName" type="text" class="form-control" id="exampleFormControlInput1" placeholder="eg.CIET">
+              </div>
+              <div class="form-group col-md-4">
+                <label for="exampleFormControlInput1">Code</label>
+                <input name="collegeCode" type="number" class="form-control" id="exampleFormControlInput1" placeholder="eg.2047">
+              </div>
+            </div>
+      
+              
+              <div class="form-group">
+                <label for="exampleFormControlInput1">College Email</label>
+                <input name="collegeEmail" type="email" class="form-control" id="exampleFormControlInput1" placeholder="eg.name@example.com">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">College PhoneNo</label>
+                <input name="collegePhoneNo" type="text" class="form-control" id="exampleFormControlInput1" placeholder="916******09">
+              </div>
+              
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Admin Name</label>
+                <input name="adminName" type="text" class="form-control" id="exampleFormControlInput1" placeholder="eg.Tesla">
+              </div>
+             
+              <div class="form-group">
+                <label for="inputAddress">College Address</label>
+                <input name="collegeAddress" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="inputCity">City</label>
+                  <input name="collegeCity" type="text" class="form-control" id="inputCity" placeholder="eg.Luknow">
+                </div>
+              <div class="form-group col-md-4">
+                <label for="exampleFormControlSelect1">Country</label>
+                <select name="collegeCountry" class="form-control" >
+                  <option value="">Choose your Country</option>
+                  <option value="India">India</option>
+                  <option value="USA">USA</option>
+                  <option value="Japan">Japan</option>
+                  <option value="UAE">UAE</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-5">
+                <label for="exampleFormControlSelect1">State</label>
+                <select name="collegeState" class="form-control"  >
+                 <option value="">Choose your State</option>
+                  <option value="India">TamilNadu</option>
+                  <option value="USA">Kerala</option>
+                  <option value="Japan">Karnataka</option>
+                  <option value="UAE">AndhraPradesh</option>
+                </select>
+              </div>
+              </div>
+
+             
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Enter your new password">
+            </div>
+            <div class="form-group">
+              <label>Confirm Your Password</label>
+              <input name="collegePassword" type="password" class="form-control" id="exampleFormControlInput1" placeholder="re-enter your new password">
+            </div>
+
+              <button  type="submit" class="btn btn-primary btn-lg btn-block" >Continue</button>
+            
+           
+            </form>
+          </div>
+        </div>
+          </div>
+        </div>
+      
+  
+     
+  
+   
+  </div>
+    
+ 
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+  
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+  
+ 
+  </body>
+</html>

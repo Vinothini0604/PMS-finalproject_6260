@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="RecuriterModule/DashboardTemplate::Layout(~{::section})">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <link type="text/css" href="/StyleSheet/login.css" rel="stylesheet"/>
+  
+  </head>
+  <body>
+  <section>
+  <link type="text/css" href="/StyleSheet/Dashboard.css" rel="stylesheet"/>
+   <title>Recuriter | Check</title>
+   <div class="margin-body">
+<div class="container">
+        <div class="card-lg">
+          <div class="card-body" >
+   <form th:action="@{'/updateRecuriterDetails'+${recuriter.companyId}}"  method="get">
+   				<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+             	<button  type="submit" class="btn btn-outline-success me-md-2  " >Save</button>
+             	</div>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Company Name</label>
+                <input name="companyName" type="text" class="form-control" id="exampleFormControlInput1" th:value="${recuriter.companyName}">
+
+              </div>
+              
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Company Email</label>
+                <input name="companyEmail" type="email" class="form-control" id="exampleFormControlInput1" th:value="${recuriter.companyEmail}">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Company PhoneNo</label>
+                <input name="companyPhoneNo" type="text" class="form-control" id="exampleFormControlInput1" th:value="${recuriter.companyPhoneNo}">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Recuriter Name</label>
+                <input name="recuriterName" type="text" class="form-control" id="exampleFormControlInput1" th:value="${recuriter.recuriterName}">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Recuriter PhoneNo</label>
+                <input name="recuriterPhoneNo" type="text" class="form-control" id="exampleFormControlInput1" th:value="${recuriter.recuriterPhoneNo}">
+              </div>
+              
+             
+              <div class="form-group">
+                <label for="inputAddress">Company Address</label>
+                <input name="companyAddress" type="text" class="form-control" id="inputAddress" th:value="${recuriter.companyAddress}">
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="inputCity">City</label>
+                  <input name="companyCity" type="text" class="form-control" id="inputCity" th:value="${recuriter.companyCity}">
+                </div>
+              <div class="form-group col-md-4">
+                <label for="exampleFormControlSelect1">Country</label>
+                <select name="companyCountry"  class="form-control" >
+                <option  th:value="${recuriter.companyCountry}"><p th:text="${recuriter.companyCountry}"></p></option>
+                  <option value="India">India</option>
+                  <option value="USA">USA</option>
+                  <option value="Japan">Japan</option>
+                  <option value="UAE">UAE</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-5">
+                <label for="exampleFormControlSelect1">State</label>
+                <select name="companyState" class="form-control" >
+                <option  th:value="${recuriter.companyState}"><p th:text="${recuriter.companyState}"></p></option>
+                  <option value="TamilNadu">TamilNadu</option>
+                  <option value="Kerala">Kerala</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="AndhraPradesh">AndhraPradesh</option>
+                </select>
+              </div>
+              </div>
+
+             
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" class="form-control" id="exampleFormControlInput1" th:value="${recuriter.companyPassword}">
+            </div>
+            <div class="form-group">
+              <label>Confirm Your Password</label>
+              <input name="companyPassword"type="password" class="form-control" id="exampleFormControlInput1" th:value="${recuriter.companyPassword}">
+            </div>
+
+              
+            
+        
+            </form>
+            </div>
+        </div>
+          </div>
+  </div>
+  
+  </section> 
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
