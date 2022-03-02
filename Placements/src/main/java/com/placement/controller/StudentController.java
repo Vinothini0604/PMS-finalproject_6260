@@ -56,28 +56,13 @@ public class StudentController
 		return "StudentModule/StudDashActivity";
 	}
 	
-	@GetMapping("/myDetails{id}")
-	public String myDetails(@PathVariable int id,Model model)
-	{
 	
-		StudentEntity entityObj = studentServiceObj.findByStudentId(id); 
-		if(entityObj!=null)
-		{
-			model.addAttribute("student",entityObj);
-			return  "StudentModule/StudDashMyDetails";
-		}
-		else
-		{
-			return  "StudentModule/StudentDashboard";
-		}
-		
-		
-	}
 	
 	
 	@PostMapping("/apply{id}")
-	public String applyJob()
+	public String applyJob(@PathVariable int id)
 	{
+		
 		
 		return "StudentModule/StudDashActivity";
 	}

@@ -1,10 +1,14 @@
 package com.placement.entity;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 @Entity
 public class RecuriterJobPostEntity {
 	@Id
@@ -22,6 +26,9 @@ public class RecuriterJobPostEntity {
 	private String jobDescription;
 	@Column
 	private String jobDeadline;
+	
+	
+	
 	public int getJobId() {
 		return jobId;
 	}

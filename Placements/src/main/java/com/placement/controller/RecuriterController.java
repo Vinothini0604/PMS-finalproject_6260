@@ -120,6 +120,7 @@ public class RecuriterController
 		
 	}
 	
+	
 	@GetMapping("/findJob{id}")
 	public String findJob(@PathVariable int id,Model model)
 	{
@@ -138,6 +139,8 @@ public class RecuriterController
 		return "RecuriterModule/RecuriterLogin";
 	}
 	
+	
+	
 	@PostMapping("/recuriterverifylogin")
 	public String verifyLogin(@ModelAttribute RecuriterEntity recuriterEntityObj,Model model)
 	{
@@ -155,13 +158,7 @@ public class RecuriterController
 		}
 	} 
 	
-	@GetMapping("/r_myDetails{id}")
-	public String myDetails(@PathVariable int id,Model model)
-	{
-		RecuriterEntity entity = recuriterServiceObj.findByCompanyId(id);
-		model.addAttribute("recuriter",entity);
-		return "RecuriterModule/RecDashMyDetails";
-	}
+	
 	
 	
 	@GetMapping("/updateRecuriterDetails{id}")

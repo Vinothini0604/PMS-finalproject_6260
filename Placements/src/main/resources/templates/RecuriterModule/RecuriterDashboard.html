@@ -19,7 +19,7 @@
    <title>Recuriter | Dashboard</title>
    <div class="margin-body">
      <div class="container-sm">
-        <div class="card my-4" style="width:50rem; margin-left: 12%">
+        <div class="card   my-4" style="width:40rem; margin-left: 20%">
             <div class="card-body">
                 
                 <img src="Images/About.jpg">
@@ -47,7 +47,107 @@
             </div>
             <hr>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <a class="btn btn-outline-info  me-md-2 " th:href="@{'/r_myDetails'+${recuriter.companyId}}" role="button">Edit</a>
+               
+                
+                <!-- Button trigger modal -->
+				<button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#staticBackdrop">
+				  Edit
+				</button>
+				
+				<!-- Modal -->
+				<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+				  <div class="modal-dialog modal-dialog-scrollable">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="staticBackdropLabel">Edit Details</h5>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body">
+				  <form th:action="@{'/updateRecuriterDetails'+${recuriter.companyId}}"  method="get">
+   				 
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Company Name</label>
+                <input name="companyName" type="text" class="form-control" id="exampleFormControlInput1" th:value="${recuriter.companyName}">
+
+              </div>
+              
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Company Email</label>
+                <input name="companyEmail" type="email" class="form-control" id="exampleFormControlInput1" th:value="${recuriter.companyEmail}">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Company PhoneNo</label>
+                <input name="companyPhoneNo" type="text" class="form-control" id="exampleFormControlInput1" th:value="${recuriter.companyPhoneNo}">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Recuriter Name</label>
+                <input name="recuriterName" type="text" class="form-control" id="exampleFormControlInput1" th:value="${recuriter.recuriterName}">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Recuriter PhoneNo</label>
+                <input name="recuriterPhoneNo" type="text" class="form-control" id="exampleFormControlInput1" th:value="${recuriter.recuriterPhoneNo}">
+              </div>
+              
+             
+              <div class="form-group">
+                <label for="inputAddress">Company Address</label>
+                <input name="companyAddress" type="text" class="form-control" id="inputAddress" th:value="${recuriter.companyAddress}">
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="inputCity">City</label>
+                  <input name="companyCity" type="text" class="form-control" id="inputCity" th:value="${recuriter.companyCity}">
+                </div>
+              <div class="form-group col-md-4">
+                <label for="exampleFormControlSelect1">Country</label>
+                <select name="companyCountry"  class="form-control" >
+                <option  th:value="${recuriter.companyCountry}"><p th:text="${recuriter.companyCountry}"></p></option>
+                  <option value="India">India</option>
+                  <option value="USA">USA</option>
+                  <option value="Japan">Japan</option>
+                  <option value="UAE">UAE</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-5">
+                <label for="exampleFormControlSelect1">State</label>
+                <select name="companyState" class="form-control" >
+                <option  th:value="${recuriter.companyState}"><p th:text="${recuriter.companyState}"></p></option>
+                  <option value="TamilNadu">TamilNadu</option>
+                  <option value="Kerala">Kerala</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="AndhraPradesh">AndhraPradesh</option>
+                </select>
+              </div>
+              </div>
+
+             
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" class="form-control" id="exampleFormControlInput1" th:value="${recuriter.companyPassword}">
+            </div>
+            <div class="form-group">
+              <label>Confirm Your Password</label>
+              <input name="companyPassword"type="password" class="form-control" id="exampleFormControlInput1" th:value="${recuriter.companyPassword}">
+            </div>
+
+              
+            
+        
+           
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				       <button  type="submit" class="btn btn-primary" >Save</button>
+				         </form>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				
                 </div>
             </div>
           </div>

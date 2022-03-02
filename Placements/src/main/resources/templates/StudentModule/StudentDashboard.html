@@ -19,7 +19,7 @@
    <title>Student | Dashboard</title>
    <div class="margin-body">
      <div class="container-sm">
-        <div class="card my-4" style="width:50rem; margin-left: 12%">
+        <div class="card   my-4" style="width:40rem; margin-left: 20%">
             <div class="card-body">
                 
                 <img src="Images/About.jpg">
@@ -48,7 +48,126 @@
             </div>
             <hr>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <a class="btn btn-outline-info  me-md-2 " th:href="@{'/myDetails'+${studentModel.studentId}}" role="button">Edit</a>
+                <!-- Button trigger modal -->
+				<button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal">
+				 Edit
+				</button>
+				
+				<!-- Modal -->
+				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog modal-dialog-scrollable">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body">
+				<form th:object="${studentModel}" th:action="@{'/updateStudentDetails'+${studentModel.studentId}}"   method="get">
+            
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Name</label>
+                <input name="studentName" type="text" th:field="*{studentName}" class="form-control" id="exampleFormControlInput1" th:value="${studentModel.studentName}">
+               
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Email</label>
+                <input name="studentEmail" type="email" class="form-control" id="exampleFormControlInput1" placeholder="eg.name@example.com" th:value="${studentModel.studentEmail}">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">PhoneNo</label>
+                <input name="studentPhoneno" type="text" class="form-control" id="exampleFormControlInput1" placeholder="916******09" th:value="${studentModel.studentPhoneno}">
+              </div>
+              <div class="form-group">
+                <label for="inputCity">Date.of.Birth</label>
+                <input name="studentDateOfBirth" type="text" class="form-control" placeholder="11.02.2022" th:value="${studentModel.studentDateOfBirth}">
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group col-md-2">
+                  <label>Degree</label>
+                  <select name="studentDegree" class="form-control" >
+                    <option  th:value="${studentModel.studentDegree}"><p th:text="${studentModel.studentDegree}"></p></option>
+                    <option value="B.E/B.Tech">B.E/B.Tech</option>
+                    <option value="M.E">M.E</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-6">
+                  <label >Branch</label>
+                  <select name="studentBranch" class="form-control"   >
+                     <option  th:value="${studentModel.studentBranch}"><p th:text="${studentModel.studentBranch}"></p></option>
+                    <option value="Computer Science and Engineering">Computer Science and Engineering</option>
+                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    <option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
+                    <option value="Civil Engineering">Civil Engineering</option>
+                    <option value="Mechatronics Engineering">Mechatronics Engineering</option>
+                    <option value="information Technology">Information Technology</option>
+                  </select>
+
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputCity">Acedemic year</label>
+                  <input name="studentAcademicYear" type="number" class="form-control"  th:value="${studentModel.studentAcademicYear}">
+                </div>
+                
+
+              </div>
+              <div class="form-group">
+                <label for="inputAddress">Address</label>
+                <input name="studentAddress" type="text" class="form-control" id="inputAddress" th:value="${studentModel.studentAddress}">
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="inputCity">City</label>
+                  <input name="studentCity" type="text" class="form-control" id="inputCity"th:value="${studentModel.studentCity}">
+                </div>
+              <div class="form-group col-md-4">
+                <label for="exampleFormControlSelect1">Country</label>
+                <select name="studentCountry" class="form-control" >
+                <option  th:value="${studentModel.studentCountry}"><p th:text="${studentModel.studentCountry}"></p></option>
+                  <option value="India">India</option>
+                  <option value="USA">USA</option>
+                  <option value="Japan">Japan</option>
+                  <option value="UAE">UAE</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-5">
+                <label for="exampleFormControlSelect1">State</label>
+                <select name="studentState" class="form-control" >
+                  <option  th:value="${studentModel.studentState}"><p th:text="${studentModel.studentState}"></p></option>
+                  <option value="TamilNadu">TamilNadu</option>
+                  <option value="Kerala">Kerala</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="AndhraPradesh">AndhraPradesh</option>
+                </select>
+              </div>
+              </div>
+
+             
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" class="form-control" id="exampleFormControlInput1" th:value="${studentModel.studentPassword}" >
+            </div>
+            <div class="form-group">
+              <label>Confirm Your Password</label>
+              <input name="studentPassword" type="password" class="form-control" id="exampleFormControlInput1" th:value="${studentModel.studentPassword}">
+            </div>
+
+             
+            
+            
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				         <button  type="submit" class="btn btn-success " >Save</button>
+				         </form>
+				      </div>
+				    </div>
+				  </div>
+				</div>
                 </div>
             </div>
           </div>
