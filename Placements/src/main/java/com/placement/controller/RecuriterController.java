@@ -158,7 +158,7 @@ public class RecuriterController
 		}
 	} 
 	
-	
+	//
 	
 	
 	@GetMapping("/updateRecuriterDetails{id}")
